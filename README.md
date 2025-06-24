@@ -9,26 +9,7 @@ A Python-based AI agent that interacts with the GitHub API to perform various re
 - **Error Handling**: Provides clear error messages when things go wrong
 - **User-Friendly Output**: Summarizes API responses in easy-to-understand language
 
-## 🛠 Supported Operations
 
-### Repository Management
-- Create, delete, update, list repositories
-- Fork repositories
-- Star/unstar repositories
-
-### Code Management
-- Create, update, delete files
-- List commits
-- Manage branches
-
-### Collaboration
-- Add/remove collaborators  
-- Manage issues (create, list, close)
-- Handle pull requests (create, list, merge)
-
-### Notifications
-- View notifications
-- Mark notifications as read
 
 ## ⚙️ Prerequisites
 
