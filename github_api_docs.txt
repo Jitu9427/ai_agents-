@@ -1,0 +1,165 @@
+GitHub REST API Documentation for AI Agent
+
+Base URL: https://api.github.com
+
+---
+Authentication:
+All API requests MUST include an 'Authorization' header with your Personal Access Token.
+Format: {"Authorization": "Bearer YOUR_GITHUB_TOKEN"}
+
+---
+Endpoint 1: List repositories for the authenticated user
+- Method: GET
+- URL: /user/repos
+
+---
+Endpoint 2: Create a new repository
+- Method: POST
+- URL: /user/repos
+- Body (JSON):
+  - "name": string (required)
+  - "description": string (optional)
+  - "private": boolean (optional)
+
+---
+Endpoint 3: Delete a repository
+- Method: DELETE
+- URL: /repos/{owner}/{repo}
+
+---
+Endpoint 4: List commits for a repository
+- Method: GET
+- URL: /repos/{owner}/{repo}/commits
+
+---
+Endpoint 5: Get repository details
+- Method: GET
+- URL: /repos/{owner}/{repo}
+
+---
+Endpoint 6: Update repository details
+- Method: PATCH
+- URL: /repos/{owner}/{repo}
+- Body (JSON):
+  - "name": string (optional)
+  - "description": string (optional)
+  - "private": boolean (optional)
+
+---
+Endpoint 7: List branches
+- Method: GET
+- URL: /repos/{owner}/{repo}/branches
+
+---
+Endpoint 8: Create an issue
+- Method: POST
+- URL: /repos/{owner}/{repo}/issues
+- Body (JSON):
+  - "title": string (required)
+  - "body": string (optional)
+
+---
+Endpoint 9: List issues
+- Method: GET
+- URL: /repos/{owner}/{repo}/issues
+
+---
+Endpoint 10: Close an issue
+- Method: PATCH
+- URL: /repos/{owner}/{repo}/issues/{issue_number}
+- Body:
+  - "state": "closed"
+
+---
+Endpoint 11: List pull requests
+- Method: GET
+- URL: /repos/{owner}/{repo}/pulls
+
+---
+Endpoint 12: Create a pull request
+- Method: POST
+- URL: /repos/{owner}/{repo}/pulls
+- Body (JSON):
+  - "title": string
+  - "head": string (branch name with changes)
+  - "base": string (branch to merge into)
+
+---
+Endpoint 13: Merge a pull request
+- Method: PUT
+- URL: /repos/{owner}/{repo}/pulls/{pull_number}/merge
+
+---
+Endpoint 14: List collaborators
+- Method: GET
+- URL: /repos/{owner}/{repo}/collaborators
+
+---
+Endpoint 15: Add a collaborator
+- Method: PUT
+- URL: /repos/{owner}/{repo}/collaborators/{username}
+
+---
+Endpoint 16: Remove a collaborator
+- Method: DELETE
+- URL: /repos/{owner}/{repo}/collaborators/{username}
+
+---
+Endpoint 17: Get notifications
+- Method: GET
+- URL: /notifications
+
+---
+Endpoint 18: Mark all notifications as read
+- Method: PUT
+- URL: /notifications
+
+---
+Endpoint 19: Star a repository
+- Method: PUT
+- URL: /user/starred/{owner}/{repo}
+
+---
+Endpoint 20: Unstar a repository
+- Method: DELETE
+- URL: /user/starred/{owner}/{repo}
+
+---
+Endpoint 21: Check if a repository is starred
+- Method: GET
+- URL: /user/starred/{owner}/{repo}
+
+---
+Endpoint 22: List user’s starred repositories
+- Method: GET
+- URL: /user/starred
+
+---
+Endpoint 23: Fork a repository
+- Method: POST
+- URL: /repos/{owner}/{repo}/forks
+
+---
+Endpoint 24: Create a new file in a repository
+- Method: PUT
+- URL: /repos/{owner}/{repo}/contents/{path}
+- Body (JSON):
+  - "message": string (commit message)
+  - "content": string (Base64-encoded file content)
+
+---
+Endpoint 25: Update a file in a repository
+- Method: PUT
+- URL: /repos/{owner}/{repo}/contents/{path}
+- Body (JSON):
+  - "message": string
+  - "content": string (Base64)
+  - "sha": string (existing file's sha)
+
+---
+Endpoint 26: Delete a file from a repository
+- Method: DELETE
+- URL: /repos/{owner}/{repo}/contents/{path}
+- Body (JSON):
+  - "message": string
+  - "sha": string
